@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>มัธยมดนตรี & อาร์ตเฟส 2026</title>
+    <style>
+        /* ==========================================
+           COLOR PALETTE & GLOBAL STYLES (Cute & Friendly Pop Art)
+           ========================================== */
+        :root {
+            --purple-main: #7c4dff;
+            --purple-light: #f3e8ff;
+            --purple-dark: #512da8;
+            --orange-main: #ff7043;
+            --orange-light: #fff3e0;
+            --yellow-main: #ffca28;
+            --yellow-light: #fffde7;
+            --bg-soft: #faf8ff;
+            --text-dark: #2d3436;
+            --text-muted: #636e72;
+            --white: #ffffff;
+            --card-shadow: 0 10px 25px rgba(124, 77, 255, 0.12);
+            --card-shadow-hover: 0 15px 35px rgba(255, 112, 67, 0.22);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kanit', 'Prompt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-soft);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--purple-dark);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '🎨🎶';
+            font-size: 1.2rem;
+            position: absolute;
+            right: -35px;
+            top: 0;
+        }
+
+        .section-title p {
+            color: var(--orange-main);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        /* Button Custom Styles */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orange-main), var(--yellow-main));
+            color: var(--white);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(255, 112, 67, 0.4);
+            background: linear-gradient(135deg, var(--orange-main), #ffb300);
+        }
+
+        .btn-secondary {
+            background-color: var(--purple-light);
+            color: var(--purple-dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--purple-main);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           1. NAVBAR
+           ========================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(124, 77, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--purple-main);
+        }
+
+        .logo-badge {
+            background-color: var(--yellow-main);
+            color: var(--purple-dark);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange-main);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--purple-main);
+        }
+
+        /* ==========================================
+           2. HERO SECTION
+           ========================================== */
+        .hero {
+            padding: 140px 0 80px;
+            background: radial-gradient(circle at 10% 20%, var(--purple-light) 0%, var(--yellow-light) 90%);
+            position: relative;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            color: var(--purple-dark);
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 span {
+            color: var(--orange-main);
+            background: linear-gradient(120deg, var(--orange-main), #e91e63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .hero-info-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .info-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--white);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            color: var(--purple-dark);
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-card-art {
+            background: linear-gradient(135deg, var(--purple-main), var(--orange-main));
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            color: var(--white);
+            box-shadow: var(--card-shadow);
+            transform: rotate(-2deg);
+            transition: transform 0.3s;
+        }
+
+        .hero-card-art:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .hero-card-art h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Decorative Bubbles */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 4s ease-in-out infinite;
+        }
+        .bubble-1 { width: 60px; height: 60px; background: var(--yellow-main); top: -20px; left: -20px; }
+        .bubble-2 { width: 40px; height: 40px; background: var(--orange-main); bottom: -10px; right: 20px; animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* ==========================================
+           3. EVENT DETAILS (รายละเอียดงาน)
+           ========================================== */
+        .details-section {
+            padding: 80px 0;
+        }
+
+        .zones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .zone-card {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .zone-card:hover {
+            border-color: var(--yellow-main);
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .zone-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .zone-card h3 {
+            color: var(--purple-dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* ==========================================
+           4. HIGHLIGHT ACTIVITIES (กิจกรรมเด่น 3 อย่าง)
+           ========================================== */
+        .highlights-section {
+            padding: 80px 0;
+            background-color: var(--purple-light);
+            border-radius: 40px;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .highlight-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--orange-main);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .highlight-banner {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+        }
+
+        .bg-music { background: linear-gradient(135deg, #e1bee7, #ce93d8); }
+        .bg-art { background: linear-gradient(135deg, #ffe0b2, #ffcc80); }
+        .bg-craft { background: linear-gradient(135deg, #fff9c4, #fff59d); }
+
+        .highlight-body {
+            padding: 25px;
+        }
+
+        .highlight-body h3 {
+            color: var(--purple-dark);
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================
+           5. SCHEDULE (กำหนดการ)
+           ========================================== */
+        .schedule-section {
+            padding: 80px 0;
+        }
+
+        .schedule-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .tab-btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            border: 2px solid var(--purple-main);
+            background: transparent;
+            color: var(--purple-main);
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--purple-main);
+            color: var(--white);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border-left: 6px solid var(--orange-main);
+            align-items: center;
+        }
+
+        .timeline-time {
+            font-weight: 800;
+            color: var(--purple-dark);
+            min-width: 110px;
+            font-size: 1.05rem;
+        }
+
+        .timeline-info h4 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .timeline-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================
+           6. GALLERY (คลังภาพผลงาน)
+           ========================================== */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: var(--yellow-light);
+            border-radius: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background-color: var(--white);
+            border-radius: var(--radius-md);
+            padding: 15px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.04);
+        }
+
+        .gallery-photo-placeholder {
+            height: 160px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+        }
+
+        .photo-1 { background: #f8bbd0; }
+        .photo-2 { background: #d1c4e9; }
+        .photo-3 { background: #b2dfdb; }
+        .photo-4 { background: #ffe082; }
+
+        .gallery-item p {
+            font-weight: 600;
+            color: var(--purple-dark);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================
+           7. REGISTRATION / CTA SECTION
+           ========================================== */
+        .register-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .register-card {
+            background: linear-gradient(135deg, var(--purple-main), var(--purple-dark));
+            border-radius: var(--radius-lg);
+            padding: 50px 30px;
+            color: var(--white);
+            box-shadow: var(--card-shadow);
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .register-card h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .register-card p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .register-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        /* Modal Box for success */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 35px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            max-width: 400px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .modal-content h3 {
+            color: var(--purple-dark);
+            margin-bottom: 10px;
+            font-size: 1.6rem;
+        }
+
+        /* ==========================================
+           8. CONTACT & FOOTER
+           ========================================== */
+        .contact-section {
+            padding: 70px 0;
+            background-color: var(--white);
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.02);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .contact-card {
+            background-color: var(--bg-soft);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+
+        .contact-card h4 {
+            color: var(--purple-dark);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .social-btn {
+            background-color: var(--purple-light);
+            color: var(--purple-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--orange-main);
+            color: var(--white);
+        }
+
+        footer {
+            background-color: var(--purple-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        /* ==========================================
+           MEDIA QUERIES (MOBILE RESPONSIVE)
+           ========================================== */
+        @media (max-width: 768px) {
+            .navbar .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            .navbar .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-info-badges {
+                justify-content: center;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .timeline-time {
+                color: var(--orange-main);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span>🎵🎨 มัธยมดนตรี & อาร์ตเฟส</span>
+                <span class="logo-badge">2026</span>
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" onclick="toggleMenu()">รายละเอียดงาน</a></li>
+                <li><a href="#activities" onclick="toggleMenu()">กิจกรรมเด่น</a></li>
+                <li><a href="#schedule" onclick="toggleMenu()">กำหนดการ</a></li>
+                <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">ติดต่อสอบถาม</a></li>
+                <li>
+                    <a href="#register" class="btn btn-primary" style="padding: 8px 18px; color: white;" onclick="toggleMenu()">
+                        ลงทะเบียนฟรี
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>เทศกาลดนตรี & ศิลปะ <br><span>มัธยมดนตรี & อาร์ตเฟส</span></h1>
+                <p>ขอเชิญชวนทุกคนทุกเพศทุกวัย ร่วมปลดปล่อยความคิดสร้างสรรค์และเพลิดเพลินไปกับเสียงเพลง ภาพวาด และเวิร์กช็อปสุดอบอุ่นใจ!</p>
+                
+                <div class="hero-info-badges">
+                    <div class="info-badge">📅 25-26 พฤศจิกายน 2026</div>
+                    <div class="info-badge">⏰ 09:00 - 18:00 น.</div>
+                    <div class="info-badge">📍 หอประชุมใหญ่โรงเรียน</div>
+                </div>
+
+                <a href="#register" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 36px;">
+                    ลงทะเบียนเข้าร่วมงาน (จองตั๋วเข้าชมฟรี!)
+                </a>
+            </div>
+
+            <div class="hero-image">
+                <div class="bubble bubble-1"></div>
+                <div class="bubble bubble-2"></div>
+                <div class="hero-card-art">
+                    <p style="font-size: 3rem; margin-bottom: 10px;">🎸🎨✨</p>
+                    <h3>Music & Art Fest</h3>
+                    <p>พื้นที่สร้างสรรค์ของวัยรุ่นและคนรักศิลปะทุกคน</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. รายละเอียดงาน (EVENT DETAILS) -->
+    <section class="details-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>โซนกิจกรรมภายในงาน</h2>
+                <p>จัดเต็มครบทุกโซนความสนุก สนุกได้ทั้งวัน!</p>
+            </div>
+
+            <div class="zones-grid">
+                <div class="zone-card">
+                    <div class="zone-icon">🎤</div>
+                    <h3>โซนดนตรีสด</h3>
+                    <p>ฟังการแสดงดนตรีสดจากวงนักเรียนและวงดนตรีสุดพิเศษบนเวทีใหญ่ตลอดทั้งวัน</p>
+                </div>
+                <div class="zone-card">
+                    <div class="zone-icon">🖼️</div>
+                    <h3>โซนจัดแสดงศิลปะ</h3>
+                    <p>ชมผลงานภาพวาด งานปั้น และ Pop Art สุดสร้างสรรค์จากฝีมือนักเรียน</p>
+                </div>
+                <div class="zone-card">
+                    <div class="zone-icon">✂️</div>
+                    <h3>โซนเวิร์กช็อป</h3>
+                    <p>ลงมือทำกิจกรรมงานคราฟต์สุดน่ารัก เช่น วาดภาพ ระบายสีพวงกุญแจ DIY</p>
+                </div>
+                <div class="zone-card">
+                    <div class="zone-icon">🛍️</div>
+                    <h3>ตลาดนัดศิลปะ</h3>
+                    <p>ช้อปสินค้าแฮนด์เมด สติ๊กเกอร์ โปสต์การ์ด และของที่ระลึกสุดลิมิเต็ด</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. กิจกรรมเด่น (HIGHLIGHT ACTIVITIES) -->
+    <section class="highlights-section" id="activities">
+        <div class="container">
+            <div class="section-title">
+                <h2>กิจกรรมเด่น 3 อย่างที่ไม่ควรพลาด</h2>
+                <p>ไฮไลต์สุดพิเศษที่เตรียมไว้ให้ทุกคน</p>
+            </div>
+
+            <div class="highlights-grid">
+                <!-- Highlight 1 -->
+                <div class="highlight-card">
+                    <span class="highlight-badge">Highlight 1</span>
+                    <div class="highlight-banner bg-music">🎸</div>
+                    <div class="highlight-body">
+                        <h3>การแสดงดนตรีสด (Live Band)</h3>
+                        <p>ร่วมส่งเสียงเชียร์วงดนตรีมัธยมสุดฮอตที่จะมาวาดลวดลายบทเพลงหลากหลายสไตล์ พร้อมแขกรับเชิญสุดพิเศษ!</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div class="highlight-card">
+                    <span class="highlight-badge">Highlight 2</span>
+                    <div class="highlight-banner bg-art">🎨</div>
+                    <div class="highlight-body">
+                        <h3>โซนจัดแสดงศิลปะ (Art Gallery)</h3>
+                        <p>ชมนิทรรศการศิลปะ Pop Art & Colorful รวบรวมผลงานภาพวาดและงานสร้างสรรค์จากนักเรียนมัธยมปีก่อนๆ และปัจจุบัน</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div class="highlight-card">
+                    <span class="highlight-badge">Highlight 3</span>
+                    <div class="highlight-banner bg-craft">🧶</div>
+                    <div class="highlight-body">
+                        <h3>เวิร์กช็อปงานคราฟต์ (Craft Workshop)</h3>
+                        <p>สนุกกับการประดิษฐ์ของทำมือ DIY นำผลงานสุดน่ารักชิ้นเดียวในโลกกลับบ้านไปเป็นของขวัญฟรี!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. กำหนดการ (SCHEDULE) -->
+    <section class="schedule-section" id="schedule">
+        <div class="container">
+            <div class="section-title">
+                <h2>กำหนดการกิจกรรม</h2>
+                <p>วางแผนมาเที่ยวงานกันเลย</p>
+            </div>
+
+            <div class="schedule-tabs">
+                <button class="tab-btn active" onclick="switchDay(1)">วันพุธที่ 25 พ.ย.</button>
+                <button class="tab-btn" onclick="switchDay(2)">วันพฤหัสบดีที่ 26 พ.ย.</button>
+            </div>
+
+            <!-- Schedule Day 1 -->
+            <div class="timeline" id="day1-schedule">
+                <div class="timeline-item">
+                    <div class="timeline-time">09:00 - 09:30 น.</div>
+                    <div class="timeline-info">
+                        <h4>พิธีเปิดงาน มัธยมดนตรี & อาร์ตเฟส 2026</h4>
+                        <p>การแสดงเปิดงานสุดตระการตา ณ หอประชุมใหญ่</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">10:00 - 12:00 น.</div>
+                    <div class="timeline-info">
+                        <h4>การแสดงดนตรีสด ช่วงที่ 1 & เปิดโซน Art Market</h4>
+                        <p>ฟังเพลงชิลๆ พร้อมเดินชมงานศิลปะและตลาดนัดแฮนด์เมด</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">13:00 - 15:30 น.</div>
+                    <div class="timeline-info">
+                        <h4>กิจกรรม Craft Workshop (รอบบ่าย)</h4>
+                        <p>เวิร์กช็อปวาดภาพพอร์ตเทรตและทำพวงกุญแจ DIY</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">16:00 - 18:00 น.</div>
+                    <div class="timeline-info">
+                        <h4>Live Music Concert จากวงวงดนตรีโรงเรียน</h4>
+                        <p>คอนเสิร์ตส่งท้ายวันแรกสุดมันส์ต้อนรับยามเย็น</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schedule Day 2 -->
+            <div class="timeline" id="day2-schedule" style="display: none;">
+                <div class="timeline-item">
+                    <div class="timeline-time">09:00 - 11:30 น.</div>
+                    <div class="timeline-info">
+                        <h4>การแข่งขัน Live Painting โชว์วาดภาพสด</h4>
+                        <p>ร่วมลุ้นและส่งใจเชียร์ศิลปินมัธยมวาดภาพโชว์กลางงาน</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">12:30 - 15:00 น.</div>
+                    <div class="timeline-info">
+                        <h4>การแสดงดนตรี acoustic & การประกวดวงดนตรี</h4>
+                        <p>การประชันความสามารถด้านดนตรีของเหล่านักเรียน</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">15:30 - 17:30 น.</div>
+                    <div class="timeline-info">
+                        <h4>Grand Finale Concert & มอบรางวัล</h4>
+                        <p>การแสดงพิเศษและพิธีปิดงานอย่างอบอุ่น</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GALLERY (คลังภาพผลงาน) -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery คลังภาพผลงาน & บรรยากาศ</h2>
+                <p>ประทับใจไปกับผลงานศิลปะและการซ้อมดนตรีของพวกเรา</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-photo-placeholder photo-1">🎨</div>
+                    <p>ผลงานภาพวาด Pop Art ของนักเรียน</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-photo-placeholder photo-2">🎸</div>
+                    <p>บรรยากาศการซ้อมดนตรีสด</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-photo-placeholder photo-3">🧵</div>
+                    <p>งานคราฟต์ Hand-made น่ารักๆ</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-photo-placeholder photo-4">📸</div>
+                    <p>ภาพความประทับใจจากงานปีก่อน</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. REGISTRATION / CTA SECTION -->
+    <section class="register-section" id="register">
+        <div class="container">
+            <div class="register-card">
+                <h2>ลงทะเบียนเข้าร่วมงาน (จองตั๋วเข้าชมฟรี!)</h2>
+                <p>กรอกข้อมูลสั้นๆ เพื่อรับสิทธิ์เข้าชมงานและรับของที่ระลึกหน้างานฟรี!</p>
+
+                <form class="register-form" onsubmit="handleRegister(event)">
+                    <input type="text" class="form-input" placeholder="ชื่อ - นามสกุล" required>
+                    <input type="tel" class="form-input" placeholder="เบอร์โทรศัพท์" required>
+                    <input type="email" class="form-input" placeholder="อีเมล (สำหรับรับตั๋ว)" required>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px; font-size: 1.1rem;">
+                        ยืนยันการลงทะเบียนรับตั๋วฟรี!
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CONTACT & FOOTER -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>ข้อมูลติดต่อสอบถาม</h2>
+                <p>สอบถามรายละเอียดเพิ่มเติมได้ตามช่องทางด้านล่างนี้</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>📍 สถานที่จัดงาน</h4>
+                    <p>หอประชุมใหญ่โรงเรียน<br>25-26 พฤศจิกายน 2026 (09:00 - 18:00 น.)</p>
+                </div>
+
+                <div class="contact-card">
+                    <h4>📞 โทรศัพท์ & อีเมล</h4>
+                    <p>เบอร์โทร: 02-xxx-xxxx</p>
+                    <p>อีเมล: artfest@school.ac.th</p>
+                </div>
+
+                <div class="contact-card">
+                    <h4>🌐 โซเชียลมีเดีย</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">Facebook</a>
+                        <a href="#" class="social-btn">Instagram</a>
+                        <a href="#" class="social-btn">TikTok</a>
+                        <a href="#" class="social-btn">Line Official</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 มัธยมดนตรี & อาร์ตเฟส | ออกแบบและสร้างสรรค์โดยนักเรียนชั้น ม.4</p>
+    </footer>
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <p style="font-size: 3.5rem; margin-bottom: 10px;">🎉</p>
+            <h3>ลงทะเบียนสำเร็จ!</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">เราได้ส่งรายละเอียดตั๋วเข้าชมงานฟรีไปทางอีเมลของคุณเรียบร้อยแล้ว แล้วพบกันในงานนะคะ!</p>
+            <button class="btn btn-primary" onclick="closeModal()">ตกลง</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Switch Schedule Tabs
+        function switchDay(day) {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const day1 = document.getElementById('day1-schedule');
+            const day2 = document.getElementById('day2-schedule');
+
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+
+            if (day === 1) {
+                tabBtns[0].classList.add('active');
+                day1.style.display = 'block';
+                day2.style.display = 'none';
+            } else {
+                tabBtns[1].classList.add('active');
+                day1.style.display = 'none';
+                day2.style.display = 'block';
+            }
+        }
+
+        // Handle Form Registration
+        function handleRegister(e) {
+            e.preventDefault();
+            document.getElementById('successModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
